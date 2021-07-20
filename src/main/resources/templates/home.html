@@ -1,0 +1,14 @@
+<div>
+    <h1 class="title">OAuth 2.0 Spring Security Cognito Demo</h1>
+    <div sec:authorize="isAuthenticated()">
+        <div class="box">
+            Hello, <strong th:text="${#authentication.name}"></strong>!
+        </div>
+    </div>
+    <div sec:authorize="isAnonymous()">
+        <div class="box">
+            <a class="button login is-primary" th:href="@{/oauth2/authorization/cognito}">
+                Log in with Amazon Cognito</a>
+        </div>
+    </div>
+</div>
